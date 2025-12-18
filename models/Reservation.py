@@ -1,11 +1,11 @@
 from dataclasses import dataclass
-from datetime import date, timedelta
+from datetime import datetime
 
 @dataclass
 class Reservation:
-    day: date
-    time_from: timedelta
-    time_to: timedelta
+    day: datetime
+    time_from: datetime
+    time_to: datetime
     table_number: int
     _id: int
     _pin: int
