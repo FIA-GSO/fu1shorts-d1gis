@@ -1,10 +1,13 @@
 from fastapi import FastAPI
 
+import repository
+
 app = FastAPI()
+repo = repository.Repository()
 
 @app.get("/tische")
 def get_freie_tische():
-    return "tisch"
+    return repo.getFreieTische()
 
 
 @app.post("/reservierungen")
