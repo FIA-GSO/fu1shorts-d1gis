@@ -1,4 +1,8 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Table:
     number: int
     seats: int
-    is_Free: bool
+    is_free: bool
