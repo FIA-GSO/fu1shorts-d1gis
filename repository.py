@@ -1,3 +1,6 @@
+from datetime import datetime
+
+from models.Reservation import Reservation
 from models.Table import Table
 
 
@@ -14,3 +17,5 @@ class Repository:
         t = Table(1,2,True)
         return self.tables
 
+    def getReservations(self) -> list[Reservation]:
+        return [Reservation(datetime.now(), datetime.now(), datetime.now(), 3, 3, 3)]

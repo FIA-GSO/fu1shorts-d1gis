@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 import repository
+from models.Reservation import Reservation
 
 app = FastAPI()
 repo = repository.Repository()
@@ -11,13 +12,13 @@ def get_freie_tische():
 
 
 @app.post("/reservierungen")
-def post_reservierungen():
-    return "reservierungen"
+def post_reservierungen(reservation: Reservation):
+    return reservation
 
 
 @app.get("/reservierungen")
 def get_reservierungen():
-    return "reservierungen"
+    return repo.getReservations()
 
 
 @app.delete("/reservierungen/{res_id}")
